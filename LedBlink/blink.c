@@ -21,8 +21,8 @@ int main(void)
         printf("[Before] IN Check Debounce = %i\n", debounce);
         while (digitalRead(BUTTON_PIN))
         {
+            delay(100);
             debounce++;
-            delay(10);
         }
         printf("[AFTER] IN Check Debounce = %i\n", debounce);
         if (debounce >= DEBOUNCE_x10ms)
