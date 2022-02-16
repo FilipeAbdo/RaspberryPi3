@@ -18,6 +18,7 @@ int main(void)
         while (digitalRead(4))
         {
             debounce++;
+            delay(10);
         }
         if (debounce >= DEBOUNCE_x10ms)
         {
