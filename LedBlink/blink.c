@@ -18,13 +18,13 @@ int main(void)
     for (;;)
     {
         debounce = 0;
-        printf("[Before] IN Check Debounce = %i", debounce);
+        printf("[Before] IN Check Debounce = %i\n", debounce);
         while (digitalRead(BUTTON_PIN))
         {
             debounce++;
             delay(10);
         }
-        printf("[AFTER] IN Check Debounce = %i", debounce);
+        printf("[AFTER] IN Check Debounce = %i\n", debounce);
         if (debounce >= DEBOUNCE_x10ms)
         {
             printf("Debounce = %i\n", debounce);
