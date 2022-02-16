@@ -3,7 +3,7 @@
 #include <wiringPi.h>
 
 #define BLINK_CYCLES 3
-#define DEBOUNCE_x10ms 5
+#define DEBOUNCE_x10ms 10
 
 int main(void)
 {
