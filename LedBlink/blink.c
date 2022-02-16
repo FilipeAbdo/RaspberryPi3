@@ -22,7 +22,7 @@ int main(void)
         while (digitalRead(BUTTON_PIN) == 1);
         while (digitalRead(BUTTON_PIN) == 0)
         {
-            delay(100);
+            delay(10);
             debounce++;
         }
         printf("[AFTER] IN Check Debounce = %i\n", debounce);
