@@ -4,18 +4,20 @@
 
 #define BLINK_CYCLES 3
 #define DEBOUNCE_x10ms 10
+#define LED_PIN 25
+#define BUTTON_PIN 23
 
 int main(void)
 {
     wiringPiSetup();
-    pinMode(1, OUTPUT);
-    pinMode(4, INPUT);
-    pullUpDnControl(4, PUD_UP);
+    pinMode(LED_PIN, OUTPUT);
+    pinMode(BUTTON_PIN, INPUT);
+    pullUpDnControl(BUTTON_PIN, PUD_UP);
     printf("Hello World\n");
     for (;;)
     {
         int debounce = 0;
-        while (digitalRead(4))
+        while (digitalRead(BUTTON_PIN))
         {
             debounce++;
             delay(10);
@@ -25,9 +27,9 @@ int main(void)
             for (int i = 0; i < BLINK_CYCLES; i++)
             {
                 printf("i = %i\n", i);
-                digitalWrite(1, HIGH);
+                digitalWrite(LED_PIN, HIGH);
                 delay(300);
-                digitalWrite(1, LOW);
+                digitalWrite(LED_PIN, LOW);
                 delay(300);
             }
         }
