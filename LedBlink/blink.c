@@ -14,17 +14,20 @@ int main(void)
     pinMode(BUTTON_PIN, INPUT);
     pullUpDnControl(BUTTON_PIN, PUD_UP);
     printf("Hello World\n");
+    int debounce;
     for (;;)
     {
-        int debounce = 0;
+        debounce = 0;
+        printf("[Before] IN Check Debounce = %i", debounce);
         while (digitalRead(BUTTON_PIN))
         {
             debounce++;
             delay(10);
         }
+        printf("[AFTER] IN Check Debounce = %i", debounce);
         if (debounce >= DEBOUNCE_x10ms)
         {
-            printf("Debounce = %i", debounce);
+            printf("Debounce = %i\n", debounce);
             for (int i = 0; i < BLINK_CYCLES; i++)
             {
                 printf("i = %i\n", i);
