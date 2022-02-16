@@ -24,6 +24,7 @@ int main(void)
         }
         if (debounce >= DEBOUNCE_x10ms)
         {
+            printf("Debounce = %i", debounce);
             for (int i = 0; i < BLINK_CYCLES; i++)
             {
                 printf("i = %i\n", i);
