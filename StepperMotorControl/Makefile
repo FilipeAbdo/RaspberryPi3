@@ -1,16 +1,16 @@
 default = STEPPER
-$(info $$default is [${default}])
+# $(info $$default is [${default}])
 
 CC = gcc
-$(info $$CC is [${CC}])
+# $(info $$CC is [${CC}])
 
 libs := -lwiringPi\
 
 sources:= $(wildcard *.c)
-$(info $$sources is [${sources}])
+# $(info $$sources is [${sources}])
 
 objects:= $(patsubst %.c, %.o, $(sources))
-$(info $$objects is [${objects}])
+# $(info $$objects is [${objects}])
 
 all: $(objects)
 	$(CC) $(objects) -o $(default) $(libs)
